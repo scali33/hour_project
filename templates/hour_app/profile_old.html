@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<style>
+    .profile-cotainer{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<h1> {{user.username}}</h1>
+<div class="profile-cotainer">
+    <div>
+        {% include 'hour_app/topics_componets.html' %}
+    </div>
+
+    <div>
+        {% include 'hour_app/feed_component.html' %}
+    </div>
+
+    <div>
+        {% include 'hour_app/acitivty_reuse.html' %}
+    </div>
+</div>
+{% endblock content %}

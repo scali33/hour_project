@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<style>
+    .home-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr; /* Define três colunas para as seções */
+        gap: 20px; /* Espaçamento entre colunas */
+        align-items: start; /* Alinha o conteúdo no início de cada coluna */
+    }
+
+    .sidebar, .main-content, .activity-feed {
+        padding: 10px;
+        border: 1px solid #ddd; /* Adiciona uma borda leve para melhor visualização das colunas */
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+
+    .main-content h5, .main-content a {
+        margin-bottom: 10px;
+    }
+
+    .main-content div > div {
+        margin-bottom: 15px;
+    }
+
+    .main-content hr {
+        margin: 10px 0;
+    }
+</style>
+
+<div class="home-container">
+    <!-- Sidebar - Topics -->
+    <div class="sidebar">
+        {% include 'hour_app/topics_componets.html' %}
+    </div>
+
+    <!-- Main Content - Rooms -->
+    <div class="main-content">
+        <h5>There are currently {{ room_count }} rooms available!</h5>
+        <a href="{% url 'make_room' %}">Create a Room!!!</a>
+        
+        <div>
+            {% include 'hour_app/feed_component.html' %}
+        </div>
+    </div>
+
+    <!-- Activity Feed -->
+    <div class="activity-feed">
+        {% include 'hour_app/acitivty_reuse.html' %}
+    </div>
+</div>
+{% endblock %}
