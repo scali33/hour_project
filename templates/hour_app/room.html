@@ -60,7 +60,7 @@
             <p>Hosted By</p>
             <a href="{% url 'user_profile' room.host.id %}" class="room__author">
               <div class="avatar avatar--small">
-                <!--<img src="{{room.host.avatar.url}}" /> -->
+                <img src="{{room.host.avatar.url}}" />
               </div>
               <span>@{{room.host.username}}</span>
             </a>
@@ -83,7 +83,7 @@
                 <div class="thread__author">
                   <a href="{% url 'user_profile' message.user.id %}" class="thread__authorInfo">
                     <div class="avatar avatar--small">
-                      <!--<img src="{{message.user.avatar.url}}" /> -->
+                      <img src="{{message.user.avatar.url}}" /> 
                     </div>
                     <span>@{{message.user.username}}</span>
                   </a>
@@ -132,7 +132,7 @@
           </div>
           <p>
             {{user.name}}
-            <span>@{{user.username}}</span>
+            <span>{{user}}</span>
           </p>
         </a>
         {% endfor %}
